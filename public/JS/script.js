@@ -37,12 +37,15 @@ function gerarOpcoes(paes){
 function votar(opt){
 
     if (opt == opt1){
-        socket.emit("votar", opt2.src.slice(opt2.src.lastIndexOf("/") + 1));
-        opt2.src = "";
+        socket.emit("excluir", opt2.src.slice(opt2.src.lastIndexOf("/") + 1));
+        socket.emit("votar", opt1.src.slice(opt1.src.lastIndexOf("/") + 1));
+        opt2.setAttribute('src', '');
     }
     else{
-        socket.emit("votar", opt1.src.slice(opt1.src.lastIndexOf("/") + 1));
-        opt1.src = "";
+        socket.emit("excluir", opt1.src.slice(opt1.src.lastIndexOf("/") + 1));
+        socket.emit("votar", opt2.src.slice(opt2.src.lastIndexOf("/") + 1));
+
+        opt1.setAttribute('src', '');
     }
 
     paesRequest();
@@ -50,9 +53,9 @@ function votar(opt){
 }
 
 function vitoriaRoyale(){
-
+    console.log(opt2);
     // Remover outra div
-    if (opt1.src == "")
+    if (opt1.getAttribute('src') == '')
         opt1.parentElement.remove();
     else 
         opt2.parentElement.remove();

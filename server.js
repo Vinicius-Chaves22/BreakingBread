@@ -43,6 +43,27 @@ app.post('/addvoto', async(req,res) => {
     }
 });
 
+app.get('/limpavotos', (req,res) => {
+    
+    //tratamento para realizar o insert
+    try{
+        //espera salvar os dados todos no banco
+        sql.limpaVotos();
+
+        //deu certo, retorna msg http status com sucesso - HTTP CREATE - 201
+        res.status(201).json({message: 'Votos excluidos'});
+
+    } catch (error) {
+        //se der erro, retorna json com msg erro
+        res.status(500).json({error: error})
+    }
+
+});
+
+app.get('/voto/:img', function(req, res) {
+    res.send('Contagem dos Votos: ' + sql.pegaVotos(req.params.img));    
+});
+
 app.post('/add', (req,res) => {
     //vamos pegar o Json postado no body para usar as infos
 	const {imgPath} = req.body
@@ -113,15 +134,16 @@ io.on("connection", (socket) => {
         io.sockets.emit("paesRequest", { user: socket.id, paes: randPaes });
     });
 
-    socket.on("votar", (data) => {
+    socket.on("excluir", (data) => {
         salas[socket.id].paes.splice(salas[socket.id].paes.indexOf(data), 1);
+        //Excluir pão
+    });
 
-        console.log(data);
-
+    socket.on("votar", (data) =>{
         // Registrar voto no banco 
         sql.insertVoto(data);
-        
     });
+
 
     socket.on("disconnect", () => {
 

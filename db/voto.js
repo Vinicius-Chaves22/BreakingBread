@@ -28,12 +28,21 @@ module.exports = {
     });
   },
 
-  pegaVotos: function(){
-      return Votos.findAll();
+  pegaVotos: function(imgPath_init){
+    let contador = Votos.find({ imgPath: imgPath_init }).countDocuments();
+    
+    console.log(contador);
+
+    return contador.length;
   },
 
-  pegaVoto: function (imgPath_init){
-    return Votos.findOne({}, { Votos: { imgPath: imgPath_init } } );
+  limpaVotos: function(){
+      Votos.remove({}, function (err, result) {
+        if (err){
+            console.log(err)
+        }else{
+            console.log("Result :", result) 
+        }
+      });
   }
 };
-
