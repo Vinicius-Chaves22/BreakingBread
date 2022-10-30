@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //conectando no BD
-mongoose.connect('mongodb+srv://rafaelnator:T1EvLO5K0X040UEU@cluster0.dfqswv3.mongodb.net/Votos?retryWrites=true&w=majority')
+mongoose.connect(process.env.MongoURI)
 .then(() => 
     console.log('Conectado ao MongoDB Atlas')
 )
