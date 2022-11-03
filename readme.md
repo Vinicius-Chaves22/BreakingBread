@@ -17,4 +17,4 @@ Você pode acessar o site em: <a href="https://breakingbread.onrender.com/"> Bre
 
 <a href="https://github.com/rafaelnator"> rafaelnator </a> - Back end & MongoDB
 
-<a href="https://github.com/TulioTheGreat"> TulioTheGreat </a> - Design
+<a href="https://github.com/TulioTheGreat"> TulioTheGreat </a> - Front end & Design
