@@ -7,7 +7,7 @@
 }
 body{
 
-    background-color: #4B3832;
+    background-color: #3C2F2F;
     overflow: hidden;
 
 }
@@ -36,7 +36,7 @@ main{
     width: 100vw;
     position: absolute;
     text-align: center;
-    padding-top: 4rem;
+    padding-top: 8rem;
     color: white;
     font-weight: bold;
     display: none;
@@ -44,7 +44,8 @@ main{
 }
 img{
 
-    height: 300px;
+    height: 40vh;
+    width: 30vw;
 
 }
 #paes-div{
@@ -63,8 +64,7 @@ img{
 }
 .option{
 
-    max-width: 500px;
-    height: 300px;
+    max-width: 70vw;
     overflow: hidden;
     transition: all 0.2s;
     cursor: pointer;
@@ -79,10 +79,17 @@ img{
     font-size: 40px;
     border: none;
     border-radius: 5px;
-    background-color: #6e5235;
+    background-color: #4B3832;
     color: #FFF4E6;
     cursor: pointer;
     display: none;
+    box-shadow: 13px 30px 15px -3px rgba(0,0,0,0.1);
+    transition: 0.2s all ease-in-out;
+}
+
+#btnRestart:hover{
+    background-color: #FFF4E6;
+    color: #4B3832;
 }
 
 .center{
@@ -91,4 +98,29 @@ img{
     display: flex;
     justify-content: center;
 
+}
+
+@media screen and (max-width: 1000px){
+    #paes-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    img{
+        height: 30vh;
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 600px){
+    img{
+        height: 20vh;
+        width: 50vw;
+    }
+
+    #btnRestart{
+        font-size: 1.8em;
+    }
 }

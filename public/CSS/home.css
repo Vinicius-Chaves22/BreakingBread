@@ -12,68 +12,97 @@ body{
 nav{
     width: 100vw;
     background: #FFF4E6;
-    padding: 1rem 1.5rem;
+    padding: 1.4rem 1.5rem;
 
 }
 
 nav a{
     color: rgba(60, 47, 47, 1);
-    padding: 10px;
-    margin-left: -10px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .all{
-    margin: 50px;
+    padding: 10%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .text-and-button{
-    text-align: left;
-    margin-top: 10%;
-    width: 50%;
-    margin-left: 150px;
+    color: #FFF4E6;
+    display: flex;
+    flex-direction: column;
 }
 
 .text-and-button h3{
-    font-size: 35px;
-    color: #FFF4E6;
+    font-size: 5em;
 }
 
 .text-and-button a{
-    color: #FFF4E6;
-    font-weight: 400;
+    font-size: 2em;
+    padding-bottom: 2em;
 }
 
-.right-img{
-    text-align: right;
-    margin-right: 10%;
-    margin-top: 5%;
+.text-and-button input{
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0.6em;
+    border: none;
+    border-radius: 0.4em;
+    box-shadow: 13px 30px 15px -3px rgba(0,0,0,0.1);
+    background-color: #4B3832;
+    color: #FFF4E6;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+
+.text-and-button input:hover{
+    background-color: #FFF4E6;
+    color: #4B3832;
 }
 
 .right-img img{
-    width: 80%;
-    height: auto;
-    border: 5px solid #FFF4E6;
-    border-radius: 7px;
+    width: 30vw;
+    border: #FFF4E6 9px solid; 
+    border-radius: 0.4em;
 }
 
-.text-and-button input[type='submit']{
-    background-color: #4B3832;
-    border: none;
-    color: #FFF4E6;
-    height: 40px;
-    width: 150px;
-    border-radius: 7px;
-    font-weight: 500;
-    font-size: 15px;
-    margin: 20px;
-    margin-left: -2px;
-    box-shadow: 10px 15px 30px #020202;
-    transition: 0.3s ease-in-out;
+@media screen and (max-width: 1000px){
+
+    nav{
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .right-img{
+        display: none;
+    }
+
+    .text-and-button{
+        display: flex;
+        width: 100%;
+        padding-top: 5%;
+        text-align: center;
+    }
+
+    .text-and-button h3{
+        font-size: 2em;
+    }
+
+    .text-and-button a{
+        font-size: 1.4em;
+    }
 }
 
-.text-and-button input[type='submit']:hover{
-    background-color: #63514b;
-    color: #ffffff;
-    font-weight: 600;
+@media screen and (max-width: 1600px){
+    .all{
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+    }
+
+    .right-img img{
+        width: 40vw;
+    }
 }
